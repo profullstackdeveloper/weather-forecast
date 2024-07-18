@@ -1,10 +1,15 @@
 import './App.css';
+import { Container } from './App.style';
+import MainLayout from './layout/MainLayout';
+import DashboardPage from './pages/dashboard';
 
 function App() {
   return (
-    <div className="App">
-      
-    </div>
+    <Container>
+      <MainLayout>
+        <DashboardPage></DashboardPage>
+      </MainLayout>
+    </Container>
   );
 }
 
