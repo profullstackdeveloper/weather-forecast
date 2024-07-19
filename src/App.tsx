@@ -1,15 +1,18 @@
+import { Provider } from 'react-redux';
 import './App.css';
-import { Container } from './App.style';
-import MainLayout from './layout/MainLayout';
+import { MainLayout } from './layout';
 import DashboardPage from './pages/dashboard';
+import { store } from './store';
 
 function App() {
   return (
-    <Container>
-      <MainLayout>
-        <DashboardPage></DashboardPage>
-      </MainLayout>
-    </Container>
+    <div className='w-screen h-screen'>
+      <Provider store={store}>
+        <MainLayout>
+          <DashboardPage></DashboardPage>
+        </MainLayout>
+      </Provider>
+    </div>
   );
 }
 

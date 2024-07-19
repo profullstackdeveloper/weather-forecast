@@ -1,7 +1,10 @@
-export default function CurrentWeather () {
+export default function CurrentWeather() {
+
+    
+
     return (
-        <>
-        This is current weather component.
-        </>
+        <div>
+
+        </div>
     )
 }

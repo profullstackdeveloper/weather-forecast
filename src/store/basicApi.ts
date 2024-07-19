@@ -7,5 +7,5 @@ export const basicApi = createApi({
     }),
     keepUnusedDataFor: 60 * 3,
     endpoints: () => ({}),
-    tagTypes: []
+    tagTypes: ['Location']
 })
