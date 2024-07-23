@@ -1,6 +1,5 @@
 import dayjs from "dayjs";
 import { CurrentWeatherComponentProps } from "../../utils/types";
-import { Container } from "./style";
 import WeatherMap from "./WeatherMap";
 import { MenuItem, Select } from "@mui/material";
 import { weatherMapLayers } from "../../utils/constants";
@@ -11,7 +10,6 @@ export default function CurrentWeather({ countryCode, weatherData, location }: C
     const [layer, setLayer] = useState<string>('');
 
     const localTime = dayjs((weatherData.dt) * 1000).format('MMM DD YYYY, hh:mma');
-    console.log(localTime)
 
     return (
         <div className="w-full flex md:flex-row flex-col justify-between gap-4">

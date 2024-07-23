@@ -4,7 +4,6 @@ import { skipToken } from "@reduxjs/toolkit/query";
 import { useGetForecastByCoordsQuery, useGetWeatherByCoordsQuery } from "../../store/weather";
 import { useGetLocationByCoordsQuery } from "../../store/location";
 import Forecast from "../../components/forecast/Forecast";
-import { BackgroundContainer } from "./style";
 import { AppContext } from "../../context/AppContext";
 
 export default function DashboardPage() {
