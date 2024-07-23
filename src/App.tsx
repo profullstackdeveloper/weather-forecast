@@ -3,14 +3,17 @@ import './App.css';
 import { MainLayout } from './layout';
 import DashboardPage from './pages/dashboard';
 import { store } from './store';
+import AppContextProvider from './context/AppContext';
 
 function App() {
   return (
     <div className='w-screen h-screen'>
       <Provider store={store}>
-        <MainLayout>
-          <DashboardPage></DashboardPage>
-        </MainLayout>
+        <AppContextProvider>
+          <MainLayout>
+            <DashboardPage></DashboardPage>
+          </MainLayout>
+        </AppContextProvider>
       </Provider>
     </div>
   );

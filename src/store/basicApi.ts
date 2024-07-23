@@ -5,7 +5,7 @@ export const basicApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.REACT_APP_BASE_API_URL
     }),
-    keepUnusedDataFor: 60 * 3,
+    keepUnusedDataFor: 60,
     endpoints: () => ({}),
-    tagTypes: ['Location']
-})
+    tagTypes: ['Location', 'Weather']
+});

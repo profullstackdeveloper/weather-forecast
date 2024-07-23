@@ -1,4 +1,4 @@
-import { GetWeatherByCoordsRequest, GetWeatherByLocationIdRequest } from "../../utils/types";
+import { GetCoordsByNameRequest, GetCoordsByNameResponse, GetLocationsByCoordsRequest, GetLocationsByCoordsResponse } from "../../utils/types";
 import { basicApi } from "../basicApi";
 
 const apiWithTag = basicApi.enhanceEndpoints({
@@ -7,26 +7,19 @@ const apiWithTag = basicApi.enhanceEndpoints({
 
 const locationApi = apiWithTag.injectEndpoints({
     endpoints: (build) => ({
-        getWeatherByLocationId: build.query<any, GetWeatherByLocationIdRequest>({
+        getCoordsByName: build.query<GetCoordsByNameResponse[], GetCoordsByNameRequest>({
             query: (params) => ({
-                url: '/weather',
+                url: '/geo/1.0/direct',
+                params
+            })
+        }),
+        getLocationByCoords: build.query<GetLocationsByCoordsResponse[], GetLocationsByCoordsRequest>({
+            query: (params) => ({
+                url: '/geo/1.0/reverse',
                 params
             })
         })
     })
 });
 
-const coordApi = apiWithTag.injectEndpoints({
-    endpoints: (build) => ({
-        getWeatherByCoords: build.query<any, GetWeatherByCoordsRequest>({
-            query: (params) => ({
-                url: '/onecall',
-                params
-            })
-        })
-    })
-})
-
-export const { useGetWeatherByLocationIdQuery, useLazyGetWeatherByLocationIdQuery } = locationApi
-
-export const { useGetWeatherByCoordsQuery, useLazyGetWeatherByCoordsQuery } = coordApi;
+export const { useGetLocationByCoordsQuery, useLazyGetLocationByCoordsQuery, useGetCoordsByNameQuery, useLazyGetCoordsByNameQuery } = locationApi
